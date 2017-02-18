@@ -1,0 +1,61 @@
+<!-- https://scotch.io/tutorials/use-ejs-to-template-your-node-application -->
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-sm-8">
+            
+                <div class="jumbotron">
+                    <h1>This is great</h1>
+                    <p>Welcome to templating using EJS</p>
+                </div>
+					<table>
+						<tr><th>Lionheart</th></tr>
+                <%
+                  //try{
+						// cannot 'require' here, must happen outside of 'render' call
+						//var fs=require('fs');
+						//fs.readdir('/home/ruby/', (err, files) => {
+						//	files.forEach(file => {
+						for(var i = 0; i < files.length; i++){
+							file = files[i];
+					%>
+					<tr><td><%= file %></td></tr>
+					<%
+						}
+					//		});
+					//	});
+					//	}catch(e){
+               //   	console.log(e.message);
+               //   }
+					%>
+					</table>
+            </div>
+            <div class="col-sm-4">
+                
+                <div class="well">
+                    <h3>Look I'm A Sidebar!</h3>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>
+
