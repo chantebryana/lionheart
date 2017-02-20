@@ -23,22 +23,12 @@
 					<table>
 						<tr><th>Lionheart</th></tr>
                 <%
-                  //try{
-						// cannot 'require' here, must happen outside of 'render' call
-						//var fs=require('fs');
-						//fs.readdir('/home/ruby/', (err, files) => {
-						//	files.forEach(file => {
 						for(var i = 0; i < files.length; i++){
 							file = files[i];
 					%>
 					<tr><td><%= file %></td></tr>
 					<%
 						}
-					//		});
-					//	});
-					//	}catch(e){
-               //   	console.log(e.message);
-               //   }
 					%>
 					</table>
             </div>

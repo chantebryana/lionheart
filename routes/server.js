@@ -19,6 +19,9 @@ app.get('/about', function(req, res) {
 	res.render('pages/about');
 });
 
+// post page
+app.post('/test', test.post);
+
 app.listen(8080);
 console.log('8080 is the magic port');
 

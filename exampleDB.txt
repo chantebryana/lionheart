@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS timeExampleB(
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	date TEXT DEFAULT (strftime('%Y-%m-%d', 'now')), 
+	temp INTEGER, 
+	time INTEGER DEFAULT (strftime('%H:%M, 'now')), 
+	createdAt INTEGER(4) NOT NULL DEFAULT (strftime('%s', 'now'))
+);
+
+INSERT INTO timeExampleB(date, temp, time) VALUES ('2017-02-14', 97.6, '8:00'), ('2017-02-15', 97.4, '8:15');
+
+SELECT id, date, temp, time, datetime(createdAt, 'unixepoch', 'localtime') as localtime FROM timeExampleB ORDER BY id;
+
+

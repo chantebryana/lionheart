@@ -1,5 +1,6 @@
 <!-- https://scotch.io/tutorials/use-ejs-to-template-your-node-application -->
-<!-- views/pages/index.ejs -->
+<!-- http://stackoverflow.com/questions/32628453/get-mysql-data-in-node-js-express-and-print-using-ejs -->
+<!-- views/pages/data.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,14 +17,24 @@
         <div class="jumbotron">
             <h1>This is great</h1>
             <p>Welcome to templating using EJS</p>
-				<h2>Variable</h2>
-				<p><%= tagline %></p>
-				<h2>Loop</h2>
-				<ul>
-					<% drinks.forEach(function(drink) { %>
-						<li><%= drink.name %> - <%= drink.drunk %></li>
-					<% }); %>
-				</ul>
+
+				<table id="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>DATA</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%print.forEach(function (user) { %>
+							<tr>
+								<td><%= test.index</td>
+								<td><%= test.data</td>
+							</tr>
+						<% }); %>
+					</tbody>
+				</table>
+
         </div>
     </main>
 
