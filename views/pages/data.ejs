@@ -20,9 +20,10 @@
 
 				<h2>Database</h2>
 				<ul>
-					<% db.each("SELECT id, dt FROM user", function(err, row) { %>
-						<li><%= row.id %> | <%= row.dt %></li>
-					<% }); %>
+					<% /*db.each("SELECT id, dt FROM user", function(err, row)*/
+						for(var i = 0; i < rows.length; i++) { %>
+						<li><%= rows[i].id %> | <%= rows[i].dt %></li>
+					<% }/*);*/ %>
 				</ul>
 
 

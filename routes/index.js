@@ -56,14 +56,15 @@ router.get('/data', function(req, res, next) {
 	var file = "abcd";
 	var db = new sqlite3.Database(file);
 	db.all("SELECT id, dt FROM user", function(err, rows) {
-		rows.forEach(function(row) {
-			console.log(row.id, row.dt);
-		});
+		    res.render('pages/data', { title: 'Data', /*files: files,*/ rows: rows });
+			//rows.forEach(function(row) {
+			//console.log(row.id, row.dt);
+		//});
 	});
 	db.close();
 
   //fs.readdir('/home/ruby/', (err, files) => {
-    res.render('pages/data', { title: 'Data', files: files });
+
   //});
 });
 
