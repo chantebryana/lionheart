@@ -16,6 +16,16 @@
         <div class="jumbotron">
             <h1>This is data</h1>
             <p>Welcome to data-ing using EJS</p>
+
+
+				<h2>Database</h2>
+				<ul>
+					<% db.each("SELECT id, dt FROM user", function(err, row) { %>
+						<li><%= row.id %> | <%= row.dt %></li>
+					<% }); %>
+				</ul>
+
+
         </div>
     </main>
 
