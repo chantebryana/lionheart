@@ -76,7 +76,7 @@ router.post('/formpost', function(req, res) {
 	var sqlite3 = require('sqlite3').verbose();
 	var file = "nodejsdb3";
 	var db = new sqlite3.Database(file);
-	db.all("INSERT INTO name (name) VALUES (\" " + req.body['name'] + "\")", function(err, rows) {	
+	db.all("INSERT INTO name (name) VALUES(\"" + req.body['name'] + "\")", function(err, rows) {	
 		//res.send('hello kitty: ' + req.body['name']);
 		res.redirect('/data');
 	});
