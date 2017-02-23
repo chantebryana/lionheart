@@ -53,9 +53,9 @@ router.get('/data', function(req, res, next) {
 
 	// http://www.w3resource.com/node.js/nodejs-sqlite.php
 	var sqlite3 = require('sqlite3').verbose();
-	var file = "abcd";
+	var file = "nodejsdb3";
 	var db = new sqlite3.Database(file);
-	db.all("SELECT id, dt FROM user", function(err, rows) {
+	db.all("SELECT id, name FROM name", function(err, rows) {
 		    res.render('pages/data', { title: 'Data', /*files: files,*/ rows: rows });
 			//rows.forEach(function(row) {
 			//console.log(row.id, row.dt);

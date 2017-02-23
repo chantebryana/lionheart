@@ -1,10 +1,20 @@
-<!-- https://scotch.io/tutorials/use-ejs-to-template-your-node-application -->
-<!-- views/pages/index.ejs -->
+<% //<!-- https://scotch.io/tutorials/use-ejs-to-template-your-node-application --> %>
+<% //<!-- views/pages/index.ejs --> %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <% include ../partials/head %>
+<% //<!--https://www.w3schools.com/html/html_tables.asp--> %>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
 </head>
 <body class="container">
 
@@ -19,14 +29,18 @@
 
 
 				<h2>Database</h2>
-				<ul>
-					<% /*db.each("SELECT id, dt FROM user", function(err, row)*/
-						for(var i = 0; i < rows.length; i++) { %>
-						<li><%= rows[i].id %> | <%= rows[i].dt %></li>
-					<% }/*);*/ %>
-				</ul>
-
-
+				<table>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+					</tr>
+					<% rows.forEach((row)=> { %>
+						<tr>
+							<td><%= row.id %></td>
+							<td><%= row.name %></td>
+						</tr>
+					<% }); %>
+				</table>
         </div>
     </main>
 
