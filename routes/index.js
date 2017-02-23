@@ -68,23 +68,19 @@ router.get('/data', function(req, res, next) {
   //});
 });
 
-/*
-router.get('/data', function(req, res, next) {
-	connection.query('SELECT * FROM test', function(err, result) {
-		if (err) {
-			throw err;
-		} else {
-			obj = {print: result};
-			res.render('print', obj);
-		}
-	});
+router.get('/form', function(req, res, next) {
+	res.render('pages/form', { title: 'Form' });
 });
-*/
 
-/*
-router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact' });
+router.post('/formpost', function(req, res) {
+	var sqlite3 = require('sqlite3').verbose();
+	var file = "nodejsdb3";
+	var db = new sqlite3.Database(file);
+	db.all("INSERT INTO name (name) VALUES (\" " + req.body['name'] + "\")", function(err, rows) {	
+		//res.send('hello kitty: ' + req.body['name']);
+		res.redirect('/data');
+	});
+	db.close();
 });
-*/
 
 module.exports = router;
